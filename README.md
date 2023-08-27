@@ -24,9 +24,11 @@ This outline presents the comprehensive data cleaning and feature engineering pr
 
 ## Positive/Negative Word Count 
 For one of our predictors, we aimed to analyze the textual comments to extract positive and negative reviews. To achieve this, we obtained a list of words associated with positive and negative sentiments. We then processed the "reviews.csv" dataset through this list to categorize the comments.
+
 <img src="https://github.com/ytia001/airbnb-ML/assets/136459037/9757667c-eed7-4d12-869b-ccf6b87518d1" alt="Image" width="400">
 
 By subtracting the total count of negative words from positive words for each listing, we generated a new numerical column representing the difference between positive and negative word usage.
+
 <img src="https://github.com/ytia001/airbnb-ML/assets/136459037/0fbd0a2e-115f-4d77-8418-f0f22634a18c" alt="Image" width="400">
 
 An important point to acknowledge is that this method does not address phrases. For instance, if a phrase like "NOT clean" was used, the code would only recognize "clean" and register it as positive.
@@ -37,8 +39,10 @@ We employed both one-hot encoding and integer encoding during our data cleaning 
 Our regression models, such as linear regression and random forest regression, exclusively accept numeric inputs. Hence, we utilized these encoding techniques to transform categorical values into numerical formats suitable for these models. Moreover, we utilized one-hot encoding to break down valuable variables like amenities – which don't fall strictly into categorical or numerical categories – into distinct variables. This allowed us to integrate them effectively into the models.
 
 For categorical variables with a substantial number of distinct values, we opted for one-hot encoding. On the other hand, categorical variables with fewer unique values were subjected to integer encoding.
+
 <img src="https://github.com/ytia001/airbnb-ML/assets/136459037/3e98a3b3-3c55-463c-b542-a3f5dcfadd1e" alt="Image" width="400">
-<img src="https://github.com/ytia001/airbnb-ML/assets/136459037/f1fb2a3a-31ec-448a-b1c4-84dd45653a50" alt="Image" width="400">
+
+<img src="https://github.com/ytia001/airbnb-ML/assets/136459037/f1fb2a3a-31ec-448a-b1c4-84dd45653a50" alt="Image" width="600" heigh="550">
 
 # Machine Learning Models 
 1. Linear Regression
